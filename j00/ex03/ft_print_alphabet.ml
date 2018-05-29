@@ -6,7 +6,7 @@
 (*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2018/05/28 17:39:46 by alex              #+#    #+#             *)
-(*   Updated: 2018/05/28 18:08:57 by alex             ###   ########.fr       *)
+(*   Updated: 2018/05/29 15:19:16 by alex             ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -22,7 +22,4 @@ let ft_print_alphabet () =
   loop ascii_of_a ;
   print_char '\n'
 
-let main () =
-  ft_print_alphabet ()
-
-let () = main ()
+let () = ft_print_alphabet ()

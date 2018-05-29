@@ -6,7 +6,7 @@
 (*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2018/05/28 23:17:23 by alex              #+#    #+#             *)
-(*   Updated: 2018/05/29 01:29:37 by alex             ###   ########.fr       *)
+(*   Updated: 2018/05/29 15:26:34 by alex             ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -41,6 +41,8 @@ let ft_rot_n gape str =
 
 
 let main () =
-  print_endline (ft_rot_n 1 "azw!")
+  print_endline (ft_rot_n 1 "azw!") ;
+  print_endline (ft_rot_n 260 "azw!") ;
+  print_endline (ft_rot_n 262 "AXZ!")
 
 let () = main ()
