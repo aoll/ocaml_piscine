@@ -6,7 +6,7 @@
 (*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2018/05/28 22:21:55 by alex              #+#    #+#             *)
-(*   Updated: 2018/05/28 23:16:40 by alex             ###   ########.fr       *)
+(*   Updated: 2018/05/29 16:46:26 by alex             ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -21,13 +21,13 @@ let ft_is_palindrome str =
   loop 0
 
 let main () =
-  print_string (
+  print_string "kayak : " ; print_string (
     if (ft_is_palindrome "kayak") then  "it's true\n" else "Doubt..\n") ;
-  print_string (
+  print_string "CAR : " ; print_string (
     if (ft_is_palindrome "CAR") then  "it's true\n" else "Doubt..\n") ;
-  print_string (
+  print_string "ABBA: " ; print_string (
     if (ft_is_palindrome "ABBA") then  "it's true\n" else "Doubt..\n") ;
-  print_string (
+  print_string "'' : " ; print_string (
     if (ft_is_palindrome "") then  "it's true\n" else "Doubt..\n")
 
 let () = main ()

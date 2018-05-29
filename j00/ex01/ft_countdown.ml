@@ -6,7 +6,7 @@
 (*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2018/05/28 16:21:31 by alex              #+#    #+#             *)
-(*   Updated: 2018/05/28 16:38:53 by alex             ###   ########.fr       *)
+(*   Updated: 2018/05/29 16:33:05 by alex             ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 let rec ft_countdown x =
@@ -25,8 +25,8 @@ let rec ft_countdown x =
 
 
 let main () =
-  ft_countdown 42 ;
-  ft_countdown 0 ;
-  ft_countdown (-42)
+  ft_countdown 3 ; print_char '\n' ;
+  ft_countdown 0 ; print_char '\n' ;
+  ft_countdown (-42) ;print_char '\n' 
 
 let () = main ()

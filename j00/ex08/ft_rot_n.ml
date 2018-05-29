@@ -6,7 +6,7 @@
 (*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2018/05/28 23:17:23 by alex              #+#    #+#             *)
-(*   Updated: 2018/05/29 15:26:34 by alex             ###   ########.fr       *)
+(*   Updated: 2018/05/29 16:51:37 by alex             ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -41,8 +41,14 @@ let ft_rot_n gape str =
 
 
 let main () =
-  print_endline (ft_rot_n 1 "azw!") ;
-  print_endline (ft_rot_n 260 "azw!") ;
-  print_endline (ft_rot_n 262 "AXZ!")
+  print_endline "1 azw! : "; print_endline (ft_rot_n 1 "azw!") ;
+  print_endline "260 azw! : "; print_endline (ft_rot_n 260 "azw!") ;
+  print_endline "1 abcdefghijklmnopqrstuvwxyz : "; print_endline (ft_rot_n 1 "abcdefghijklmnopqrstuvwxyz") ;
+  print_endline "13 abcdefghijklmnopqrstuvwxyz : "; print_endline (ft_rot_n 13 "abcdefghijklmnopqrstuvwxyz") ;
+  print_endline "42 0123456789 : "; print_endline (ft_rot_n 42 "0123456789") ;
+  print_endline "2 OI2EAS67B9 : "; print_endline (ft_rot_n 2 "OI2EAS67B9";) ;
+  print_endline "0 Damned ! : "; print_endline (ft_rot_n 0 "Damned !") ;
+  print_endline "42 '' : "; print_endline (ft_rot_n 42 "") ;
+  print_endline "1 NBzlk qnbjr ! : "; print_endline ( ft_rot_n 1 "NBzlk qnbjr !")
 
 let () = main ()

@@ -6,7 +6,7 @@
 (*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2018/05/28 20:23:59 by alex              #+#    #+#             *)
-(*   Updated: 2018/05/29 15:24:43 by alex             ###   ########.fr       *)
+(*   Updated: 2018/05/29 16:27:28 by alex             ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -25,6 +25,6 @@ let main () =
   ft_print_rev "yolo" ;
   ft_print_rev "Hello world !" ;
   ft_print_rev "" ;
-  ft_print_rev "yolo"
+  ft_print_rev "car"
 
 let () = main ()
