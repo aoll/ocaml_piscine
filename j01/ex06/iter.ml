@@ -10,13 +10,11 @@
 (*                                                                            *)
 (* ************************************************************************** *)
 
-let iter f x n =
-  let rec loop f x n =
-    if n == 0 then x
+let rec iter f x n =
+	if n == 0 then x
     else if n < 0 then -1
-    else loop f (f x) (n - 1)
-  in
-  loop f x n
+    else iter f (f x) (n - 1)
+
 
 let () =
   print_string "iter (fun x -> x * x) 2 4: " ; print_int (iter (fun x -> x * x) 2 4) ; print_string "\n" ;

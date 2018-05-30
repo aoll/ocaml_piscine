@@ -23,6 +23,7 @@ let () =
   print_string "-42: " ; print_int (fibonacci (-42)) ; print_char '\n' ;
   print_string "1: " ; print_int (fibonacci 1) ; print_char '\n' ;
   print_string "2: " ; print_int (fibonacci 2) ; print_char '\n' ;
+  print_string "3: " ; print_int (fibonacci 3) ; print_char '\n' ;
   print_string "8: " ; print_int (fibonacci 8) ; print_char '\n' ;
   print_string "6: " ; print_int (fibonacci 6) ; print_char '\n' ;
   print_string "20: " ; print_int (fibonacci 20) ; print_char '\n'

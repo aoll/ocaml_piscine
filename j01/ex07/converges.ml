@@ -10,14 +10,12 @@
 (*                                                                            *)
 (* ************************************************************************** *)
 
-let converges f x n =
-  let rec loop f x n =
-    let tmp = f (x) in
-    if  tmp == x then true
+let rec converges f x n =
+	let tmp = f (x) in
+	if n < 0 then false
+    else if  tmp == x then true
     else if n == 0 then false
-    else loop f tmp (n - 1)
-  in
-  loop f x n
+    else converges f tmp (n - 1)
 
 let () =
   if converges (( * ) 2) 2 5 == true then print_string "true\n"

@@ -11,11 +11,18 @@
 (* ************************************************************************** *)
 
 let ft_sum f i n =
-  let rec sum acc f i n =
-    if i > n then acc
-    else sum ((f i) +. acc) f (i + 1) n
-  in
-  sum 0. f i n
+	if i > n then nan
+	else
+	begin
+	let rec sum acc f i n =
+      if i > n then acc
+      else sum ((f i) +. acc) f (i + 1) n
+    in
+    sum 0. f i n
+	end
+
 
 let () =
-  print_string "ft_sum (fun i -> float_of_int (i * i)) 1 10: " ; print_float ( ft_sum (fun i -> float_of_int (i * i)) 1 10)
+  print_string "ft_sum (fun i -> float_of_int (i * i)) 1 10: " ; print_float ( ft_sum (fun i -> float_of_int (i * i)) 1 10) ; print_string "\n" ;
+  print_string "ft_sum (fun i -> float_of_int (i * i)) 11 10: " ; print_float ( ft_sum (fun i -> float_of_int (i * i)) 11 10) ; print_string "\n" ;
+print_string "ft_sum (fun i -> float_of_int (i * i)) 10 10: " ; print_float ( ft_sum (fun i -> float_of_int (i * i)) 10 10) ; print_string "\n" 
