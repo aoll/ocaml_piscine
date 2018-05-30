@@ -6,7 +6,7 @@
 (*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2018/05/30 19:05:04 by alex              #+#    #+#             *)
-(*   Updated: 2018/05/30 20:33:11 by alex             ###   ########.fr       *)
+(*   Updated: 2018/05/30 20:34:11 by alex             ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -30,6 +30,7 @@ let leibniz_pi delta =
 
 
 let () =
+  print_string "0.01: " ; print_int (leibniz_pi 0.01) ; print_string "\n" ;
   print_string "1.0: " ; print_int (leibniz_pi 1.0) ; print_string "\n" ;
   print_string "0.1: " ; print_int (leibniz_pi 0.1) ; print_string "\n" ;
   print_string "0.2: " ; print_int (leibniz_pi 0.2) ; print_string "\n" ;
