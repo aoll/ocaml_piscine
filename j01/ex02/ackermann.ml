@@ -6,7 +6,7 @@
 (*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2018/05/29 18:30:13 by alex              #+#    #+#             *)
-(*   Updated: 2018/05/29 18:42:13 by alex             ###   ########.fr       *)
+(*   Updated: 2018/05/30 20:39:54 by alex             ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -18,4 +18,7 @@ let rec ackermann m n =
     -1
 
 let () =
+  print_int (ackermann (-1) 7) ; print_string "\n" ;
+  print_int (ackermann 0 0) ; print_string "\n" ;
+  print_int (ackermann 2 3) ; print_string "\n" ;
   print_int (ackermann 4 1) ; print_string "\n"

@@ -6,11 +6,11 @@
 (*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2018/05/30 01:46:52 by alex              #+#    #+#             *)
-(*   Updated: 2018/05/30 02:12:50 by alex             ###   ########.fr       *)
+(*   Updated: 2018/05/30 20:40:33 by alex             ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
-let tak x y z =
+let rec tak x y z =
   if  y < x then
     tak (tak (x - 1) y z ) (tak (y - 1) z x) (tak (z - 1) x y)
   else
