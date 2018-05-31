@@ -15,4 +15,11 @@ let () =
 	let p a =
 		print_int a ; print_string "\n"
 		in
-	List.iter p (crossover [5;42;1;3] [1;2;3])
+	let ps s =
+		print_string s ; print_string "\n"
+		in
+	List.iter p (crossover [5;42;1;3] [1;2;3]) ;
+	List.iter p (crossover [5;42;1;3] []) ;
+	List.iter p (crossover [] [1;2;3]) ;
+	List.iter p (crossover [] []) ;
+	List.iter ps (crossover ["ok"; "hello"] ["ok"]) 
