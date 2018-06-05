@@ -8,4 +8,8 @@ let () =
 
 	in
 	let l = Value.all in
-	List.iter print l
+	let rec loop li = match li with
+	| head::tail -> print head ; loop tail
+	| [] -> ()
+	in
+	loop l
