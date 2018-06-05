@@ -6,7 +6,7 @@
 (*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2018/06/05 10:20:13 by alex              #+#    #+#             *)
-(*   Updated: 2018/06/05 13:58:18 by alex             ###   ########.fr       *)
+(*   Updated: 2018/06/05 22:51:18 by alex             ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -127,8 +127,6 @@ let k_nn (list_r:r_list) n (testing:radar) =
         end
   in
   liter 0 (Array.length !sorted_counted_label) (-1) ""
-
-
 
 let () =
   if (Array.length Sys.argv) = 2 then
