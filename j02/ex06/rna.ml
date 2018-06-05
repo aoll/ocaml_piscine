@@ -68,7 +68,7 @@ let complementary_helix h =
 	in
 	loop h n
 
-let generate_rna h =
+let generate_rna (h:helix) =
 	let n:rna = [] in
 	let new_n a = match a with
 	| a when a.nucleobase = A -> U

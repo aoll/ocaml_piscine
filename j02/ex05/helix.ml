@@ -32,12 +32,12 @@ let rec generate_helix n =
 	in
 	let l:helix = [] in
 	let rec loop h n = match n with
-		| n when n = 0 -> h
+		| n when n = 0 -> (h:helix)
 		| _ -> loop (h @ [(generate_nucleotide (map_int_char (Random.int 4) )  )])  (n - 1)
 	in
-	loop l n
+ loop l n
 
-let helix_to_string h =
+let helix_to_string (h:helix) =
 	let format t = match t with
 		| A -> "A"
 		| T -> "T"
@@ -51,7 +51,7 @@ let helix_to_string h =
 	in
 	loop h ""
 
-let complementary_helix h =
+let complementary_helix (h:helix) =
 	let n:helix = [] in
 	let new_n a = match a with
 	| a when a.nucleobase = A -> generate_nucleotide 'T'
@@ -61,7 +61,7 @@ let complementary_helix h =
 	| _ -> generate_nucleotide 'a'
 	in
 	let rec loop l dst = match l with
-	| [] -> dst
+	| [] -> (dst:helix)
 	| head::tail -> loop tail (dst @ [ (new_n head) ] )
 
 	in
