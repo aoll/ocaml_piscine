@@ -1,16 +1,18 @@
 (* ************************************************************************** *)
 (*                                                                            *)
 (*                                                        :::      ::::::::   *)
-(*   one_nn.ml                                          :+:      :+:    :+:   *)
+(*   k_nn.ml                                            :+:      :+:    :+:   *)
 (*                                                    +:+ +:+         +:+     *)
 (*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
-(*   Created: 2018/06/05 08:07:33 by alex              #+#    #+#             *)
-(*   Updated: 2018/06/05 10:19:01 by alex             ###   ########.fr       *)
+(*   Created: 2018/06/05 10:20:13 by alex              #+#    #+#             *)
+(*   Updated: 2018/06/05 13:58:18 by alex             ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
 type radar = float array * string
+
+(* type short_radar = float * string *)
 
 type r_list = radar list
 
@@ -72,17 +74,61 @@ let get_points t = match t with
 let get_label t = match t with
   | (_,label) -> label
 
-let one_nn (list_r:r_list) (testing:radar) =
-  let rec loop l near dist = match l with
-    | head::tail -> begin
-        let dist_tmp = (eu_dist (get_points head) (get_points testing)) in
-        if dist < 0. then loop tail head dist_tmp
-        else if dist_tmp < dist && dist_tmp > 0. then loop tail head dist_tmp
-        else loop tail near dist
-      end
-    | [] -> get_label near
+let get_short_label t = match t with
+  | (_,label) -> label
+
+let new_short_radar t count =
+  (count, (get_label t))
+
+let set_elem elem = match elem with
+  | (count, label) -> ((count + 1), label)
+
+
+let k_nn (list_r:r_list) n (testing:radar) =
+  let compare a b =
+    let dist_a = eu_dist (get_points testing) (get_points a) in
+    let dist_b = eu_dist (get_points testing) (get_points b) in
+    if dist_a = 0. then 1
+    else if dist_b = 0. then -1
+    else if dist_a > dist_b then 1 else if dist_a < dist_b then -1 else 0
   in
-  loop list_r testing (float_of_string "-1")
+  let l = List.sort compare list_r in
+
+  let sorted_counted_label = ref [||] in
+
+  let is_exist s =
+    let is_present = ref false in
+    for i = 0 to ((Array.length  !sorted_counted_label) - 1) do
+      if (get_short_label !sorted_counted_label.(i)) = s then
+        begin
+          Array.set !sorted_counted_label i (set_elem !sorted_counted_label.(i));
+          is_present := true
+        end
+    done ;
+    if !is_present = false then
+      begin
+        sorted_counted_label := Array.append !sorted_counted_label [|(0, s)|]
+      end
+  in
+
+  let rec f ls index = match ls with
+    | h::t -> is_exist (get_label h) ; if  (index + 1) < n then f t (index + 1)
+    | [] -> ()
+  in
+  f l 0 ;
+
+  let rec liter i len count label =
+    if i >= len then label
+    else  match !sorted_counted_label.(i) with
+      | (c, ll) ->
+        begin
+          if c > count then liter (i + 1) len c ll
+          else liter (i + 1) len count label
+        end
+  in
+  liter 0 (Array.length !sorted_counted_label) (-1) ""
+
+
 
 let () =
   if (Array.length Sys.argv) = 2 then
@@ -93,7 +139,7 @@ let () =
       let rec loop l = match l with
         | head::tail ->
           begin
-            let label = (one_nn l_data head) in
+            let label = (k_nn l_data 4 head) in
             if label = (get_label head) then incr success else incr fail;
             loop tail
           end
