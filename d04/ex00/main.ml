@@ -9,4 +9,9 @@ let () =
 	print_endline ((Color.toString c) ^ " " ^ (Color.toStringVerbose c)) ;
 	let p s =
 		print_endline ((Color.toString s) ^ " " ^ (Color.toStringVerbose s)) in
-	List.iter p Color.all
+
+	let rec loop li = match li with
+	| head::tail -> p head ; loop tail
+	| [] -> ()
+	in
+	loop Color.all
