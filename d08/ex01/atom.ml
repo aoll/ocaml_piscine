@@ -38,3 +38,18 @@ class oxygen =
   object
     inherit atom "oxygen" "O" 2
   end
+
+class lithium =
+  object
+    inherit atom "lithium" "Li" 3
+  end
+
+class nitrogen =
+  object
+    inherit atom  "nitrogen" "N" 7
+  end
+
+class fluor =
+  object
+    inherit atom "fluor" "F" 9
+  end

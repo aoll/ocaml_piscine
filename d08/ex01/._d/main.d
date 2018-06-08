@@ -1,2 +1,2 @@
-main.cmo :
-main.cmx :
+main.cmo : Molecule.cmo
+main.cmx : Molecule.cmx
